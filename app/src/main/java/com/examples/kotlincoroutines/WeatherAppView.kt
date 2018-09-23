@@ -1,9 +1,9 @@
 package com.examples.kotlincoroutines
 
-import model.CityWeather
+import Presenter.LoadedCityWeather
 
 interface WeatherAppView {
      fun showServerError(message: String)
 
-     fun showWeatherInfo(cityWeather: CityWeather)
+     fun showWeatherInfo(cityWeather: LoadedCityWeather)
 }

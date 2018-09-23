@@ -1,6 +1,8 @@
 package model
 
-public class City{
-    private var id: Long = 0
-    private var name: String? = null
+public class City(s: String, s1: String) {
+    public var id: Long = 0
+    public var name: String? = null
+
+
 }

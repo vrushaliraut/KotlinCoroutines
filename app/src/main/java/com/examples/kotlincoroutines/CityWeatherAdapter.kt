@@ -1,5 +1,6 @@
 package com.examples.kotlincoroutines
 
+import Presenter.LoadedCityWeather
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -7,11 +8,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import model.CityWeather
 
-class CityWeatherAdapter(weatherAppActivity: WeatherAppActivity, cityWeather: CityWeather) : RecyclerView.Adapter<CityWeatherAdapter.CityWeatherViewHolder>() {
+class CityWeatherAdapter(weatherAppActivity: WeatherAppActivity, cityWeather: LoadedCityWeather) :
+        RecyclerView.Adapter<CityWeatherAdapter.CityWeatherViewHolder>() {
 
-    private var cityWeather: CityWeather = cityWeather
+    private var cityWeather: LoadedCityWeather = cityWeather
     private var context: Context = weatherAppActivity
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CityWeatherViewHolder {
@@ -23,18 +24,13 @@ class CityWeatherAdapter(weatherAppActivity: WeatherAppActivity, cityWeather: Ci
 
     override fun onBindViewHolder(holder: CityWeatherViewHolder, position: Int) {
 
-        holder.cityNameTextView.text = cityWeather.name
+        holder.cityNameTextView.text = "name"
 
         var weatherInCelsius = " - "
 
-        if (cityWeather.main != null) {
-            weatherInCelsius = getDegreesRepresentation(context,
-                    cityWeather.main!!.temp?.let { convertToCelsius(it) }!!)
-        }
-
         holder.cityWeatherDegreesTextView.text = weatherInCelsius
-        holder.cityWeatherDescriptionTextView.text = cityWeather.weather!![0].main
-        holder.cityWeatherIconImageView.setImageResource(cityWeather.weather!![0].id?.let { getArtResourceForWeatherCondition(it) }!!)
+        holder.cityWeatherDescriptionTextView.text = "description"
+        holder.cityWeatherIconImageView.setImageResource(R.drawable.art_snow)
         holder.cityWeatherFavoriteImageView.setImageResource(R.drawable.ic_favorite_border_white_36dp)
 
     }

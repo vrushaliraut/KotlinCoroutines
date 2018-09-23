@@ -1,7 +1,6 @@
 package model
 
 class CityWeather {
-
     var coord: Coord? = null
     var weather: List<Weather>? = null
     var base: String? = null

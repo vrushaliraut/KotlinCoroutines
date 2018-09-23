@@ -10,5 +10,5 @@ interface WeatherService {
     @GET("weather")
     fun getCurrentWeather(@Query("q") cityName: String,
                           @Query("appid") appId: String)
-            : Deferred<CityWeather>
+            : Deferred<CityWeather?>
 }

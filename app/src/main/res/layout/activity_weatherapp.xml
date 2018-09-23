@@ -10,18 +10,18 @@
         android:id="@+id/linearlayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="100"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:weightSum="100">
 
         <EditText
             android:id="@+id/edittext_city_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
+            android:layout_weight="85"
             android:hint="@string/enter_city_name_hint"
             android:maxLength="30"
             android:maxLines="1"
-            android:layout_weight="85"
             android:textColor="@color/primary_text" />
 
         <ImageView
@@ -29,19 +29,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_weight="15"
             android:layout_margin="8dp"
+            android:layout_weight="15"
             android:background="@color/accent"
             android:src="@android:drawable/ic_search_category_default" />
     </LinearLayout>
-
-   <!-- <android.support.v7.widget.RecyclerView
-        android:id="@+id/city_recyclerview"
+    <view
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/linearlayout"
-        android:layout_margin="8dp"
-        android:scrollbars="vertical">
-    </android.support.v7.widget.RecyclerView>
--->
+        class="androidx.recyclerview.widget.RecyclerView"
+        android:id="@+id/my_recycler_view"/>
+
 </RelativeLayout>
